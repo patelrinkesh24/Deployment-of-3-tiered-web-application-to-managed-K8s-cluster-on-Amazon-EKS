@@ -10,8 +10,10 @@ DB_Host = os.environ.get('DB_Host') or "localhost"
 DB_Database = os.environ.get('DB_Database') or "mysql"
 DB_User = os.environ.get('DB_User') or "root"
 DB_Password = os.environ.get('DB_Password') or "paswrd"
-a = "Rinkesh"
-path = "S3://"
+USER_NAME = os.environ.get('USER_NAME') or "Specify User Name"
+IMAGE = os.environ.get('IMAGE_URL') or "IMAGEURL"
+
+
 @app.route("/")
 def main():
     db_connect_result = False
