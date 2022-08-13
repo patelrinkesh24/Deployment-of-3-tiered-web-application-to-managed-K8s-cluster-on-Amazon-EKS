@@ -8,8 +8,15 @@ spec:
   containers:
   - name: mysql
     image: mysql
+    volumeMounts:
+      - mountPath: /data/db
+        name: mysql
     ports:
     - containerPort: 3306
     env:
       - name: MYSQL_ROOT_PASSWORD
         value: paswrd
+  volumes:
+    - name: mysql
+      persistentVolumeClaim:
+        claimName: mysql
