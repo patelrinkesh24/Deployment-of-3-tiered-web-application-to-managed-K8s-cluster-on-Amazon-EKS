@@ -34,9 +34,9 @@ jobs:
           # Dokcer build
           docker build -t $ECR_REGISTRY/$ECR_REPOSITORY:$IMAGE_TAG .
           # unit test
-          docker run -d -p 8080:81 $ECR_REGISTRY/$ECR_REPOSITORY:$IMAGE_TAG
+          docker run -d -p 81:8080 $ECR_REGISTRY/$ECR_REPOSITORY:$IMAGE_TAG
           docker ps
           echo "Pause for 10 seconds to let container start"
           sleep 10
-          curl localhost:8080 -vvv
+          curl localhost:81 -vvv
           docker push $ECR_REGISTRY/$ECR_REPOSITORY:$IMAGE_TAG
