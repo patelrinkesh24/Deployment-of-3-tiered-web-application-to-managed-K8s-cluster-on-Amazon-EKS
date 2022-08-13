@@ -29,7 +29,7 @@ jobs:
           ECR_REPOSITORY:	simple-webapp-mysql-master
           IMAGE_TAG: latest
         run: |
-          cd simple-webapp-mysql/
+          cd simple-webapp-mysql-master/
           ls -ltra
           # Dokcer build
           docker build -t $ECR_REGISTRY/$ECR_REPOSITORY:$IMAGE_TAG .
