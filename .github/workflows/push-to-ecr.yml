@@ -26,7 +26,7 @@ jobs:
       - name: Building , Testing, Tagging, and push web application to Amazon ECR
         env:
           ECR_REGISTRY: ${{ steps.login-ecr.outputs.registry }}
-          ECR_REPOSITORY:	simple_webapp_mysql
+          ECR_REPOSITORY:	simple-webapp-mysql-master
           IMAGE_TAG: latest
         run: |
           cd simple-webapp-mysql/
