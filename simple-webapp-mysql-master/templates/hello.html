@@ -10,8 +10,9 @@
     <img src="{{ IMAGE_URL }}/success.jpg">
     <h3> Successfully connected to the MySQL database.</h3>
   {% else %}
-    <img src="{{ IMAGE_URL }}/failed.jpg">
-    <h3> Failed connecting to the MySQL database. </h3>
+    <img src="{{  IMAGE_URL }}/failed.jpg">
+    <h3> Failed connecting to the MySQL database. {{name}} {{path}} </h3>
+    <<h4>{{host}} {{username}} {{password}} {{database}}</h4>
   {% endif %}
 
   {% if debug %}
