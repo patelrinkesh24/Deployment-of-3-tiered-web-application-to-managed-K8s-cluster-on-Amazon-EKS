@@ -13,10 +13,10 @@ DB_Password = os.environ.get('DB_Password') or "paswrd"
 USER_NAME = os.environ.get('USER_NAME') or "Specify User Name"
 IMAGE_URL = os.environ.get('IMAGE_URL') or "IMAGEURL"
 
-
-s3 = boto3.client('s3')
-s3.download_file('images-ass4', 'success.jpg', 'static/success.jpg')
-s3.download_file('images-ass4', 'failed.png', 'static/failed.png')
+if IMAGE_URL != "IMAGEURL":
+    s3 = boto3.client('s3')
+    s3.download_file('images-ass4', 'success.jpg', 'static/success.jpg')
+    s3.download_file('images-ass4', 'failed.png', 'static/failed.png')
 @app.route("/")
 def main():
     db_connect_result = False
