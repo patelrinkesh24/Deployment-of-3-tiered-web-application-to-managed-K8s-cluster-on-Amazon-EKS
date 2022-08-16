@@ -3,6 +3,5 @@ kind: ConfigMap
 metadata:
   name: swbapp-config
 data:
-  sleep-interval: "25"
   USER_NAME = ""
   IMAGE_URL = "s3://images-ass4"
