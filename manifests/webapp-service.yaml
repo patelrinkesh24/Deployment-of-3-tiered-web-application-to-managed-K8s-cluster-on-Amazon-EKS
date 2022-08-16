@@ -8,8 +8,4 @@ spec:
   type: LoadBalancer
   ports:
   - port: 81
-
     targetPort: 8080
-
-    targetPort: 8080
-
