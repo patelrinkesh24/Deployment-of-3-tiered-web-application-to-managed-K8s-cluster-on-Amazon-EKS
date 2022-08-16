@@ -3,7 +3,7 @@ from flask import render_template
 import socket
 import mysql.connector
 import os
-
+import boto3
 app = Flask(__name__)
 
 DB_Host = os.environ.get('MYSQL_SERVICE_HOST') or "localhost"
@@ -14,6 +14,9 @@ USER_NAME = os.environ.get('USER_NAME') or "Specify User Name"
 IMAGE_URL = os.environ.get('IMAGE_URL') or "IMAGEURL"
 
 
+s3 = boto3.client('s3')
+s3.download_file('images-ass4', 'success.jpg', 'static/success.jpg')
+s3.download_file('images-ass4', 'failed.png', 'static/failed.png')
 @app.route("/")
 def main():
     db_connect_result = False
