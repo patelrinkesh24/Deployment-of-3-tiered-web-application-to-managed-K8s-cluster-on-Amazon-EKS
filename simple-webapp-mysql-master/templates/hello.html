@@ -7,11 +7,18 @@
     vertical-align:  middle;">
 
   {% if db_connect_result %}
+
     <img src="{{ url_for('static', filename='success.jpg') }}">    
     
     <h3> Successfully connected to the MySQL database.By: {{ USER_NAME }} using URL: {{ IMAGE_URL }}</h3>
   {% else %}
         <img src="{{ url_for('static', filename='failed.png') }}">
+
+    <img src="{{ IMAGE_URL }}/success.jpg">
+    <h3> Successfully connected to the MySQL database.</h3>
+  {% else %}
+    <img src="{{  IMAGE_URL }}/failed.jpg">
+
     <h3> Failed connecting to the MySQL database. {{name}} {{path}} </h3>
     <<h4>{{host}} {{username}} {{password}} {{database}}</h4>
   {% endif %}

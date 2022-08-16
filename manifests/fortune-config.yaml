@@ -1,0 +1,7 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: swbapp-config
+data:
+  USER_NAME: "Crew"
+  IMAGE_URL: "https://images-ass4.s3.amazonaws.com"
