@@ -29,12 +29,12 @@ def main():
     except Exception as e:
         color = '#ff3f3f'
         err_message = str(e)
-    return render_template('hello.html', debug="Environment Variables: DB_Host=" + (os.environ.get('DB_Host') or "Not Set") + "; DB_Database=" + (os.environ.get('DB_Database')  or "Not Set") + "; DB_User=" + (os.environ.get('DB_User')  or "Not Set") + "; DB_Password=" + (os.environ.get('DB_Password')  or "Not Set") + "; " + err_message, db_connect_result=db_connect_result, name=socket.gethostname(), color=color, USER_NAME=USER_NAME, IMAGE_URL=IMAGE_URL)
+    return render_template('hello.html', debug="Environment Variables: DB_Host=" + DB_Host + "; DB_Database=" + DB_Database + "; DB_User=" + DB_User + "; DB_Password=" + DB_Password + "; " + err_message, db_connect_result=db_connect_result, name=socket.gethostname(), color=color, USER_NAME=USER_NAME, IMAGE_URL=IMAGE_URL)
 
 @app.route("/debug")
 def debug():
     color = '#2196f3'
-    return render_template('hello.html', debug="Environment Variables: DB_Host=" + (os.environ.get('DB_Host') or "Not Set") + "; DB_Database=" + (os.environ.get('DB_Database')  or "Not Set") + "; DB_User=" + (os.environ.get('DB_User')  or "Not Set") + "; DB_Password=" + (os.environ.get('DB_Password')  or "Not Set"), color=color, USER_NAME=USER_NAME, IMAGE_URL=IMAGE_URL)
+    return render_template('hello.html', debug="Environment Variables: DB_Host=" + DB_Host + "; DB_Database=" + DB_Database + "; DB_User=" + DB_User + "; DB_Password=" + DB_Password, color=color, USER_NAME=USER_NAME, IMAGE_URL=IMAGE_URL)
 
 if __name__ == "__main__":
     app.run(host="0.0.0.0", port=8080)
