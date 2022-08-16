@@ -17,6 +17,7 @@ if IMAGE_URL != "IMAGEURL":
     s3 = boto3.client('s3')
     s3.download_file('images-ass4', 'success.jpg', 'static/success.jpg')
     s3.download_file('images-ass4', 'failed.png', 'static/failed.png')
+    s3.download_file('images-ass4', 'download.png', 'static/download.png')
 @app.route("/")
 def main():
     db_connect_result = False
