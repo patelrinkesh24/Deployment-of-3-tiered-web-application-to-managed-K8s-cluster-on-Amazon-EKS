@@ -3,5 +3,5 @@ kind: ConfigMap
 metadata:
   name: swbapp-config
 data:
-  USER_NAME: "Crew"
-  IMAGE_URL: "https://images-ass4.s3.amazonaws.com/unchanged"
+  USER_NAME: "Group-1"
+  IMAGE_URL: "s3://images-ass4"
