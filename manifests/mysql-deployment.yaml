@@ -1,0 +1,40 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: mysql
+  labels:
+    name: mysql
+spec:
+  selector:
+    matchLabels:
+      name: mysql
+  replicas: 1
+  template:
+    metadata:
+      labels:
+        name: mysql
+    spec:
+      serviceAccountName: clo835
+      containers:
+      - name: mysql
+        image: mysql
+        volumeMounts:
+        - mountPath: /data/db
+          name: mysql-pvc
+        ports:
+        - containerPort: 3306
+        env:
+        - name: DB_User
+          valueFrom:
+            secretKeyRef:
+              name: app-secret
+              key: DB_User
+        - name: MYSQL_ROOT_PASSWORD
+          valueFrom:
+            secretKeyRef:
+              name: app-secret
+              key: DB_Password
+      volumes:
+        - name: mysql-pvc
+          persistentVolumeClaim:
+            claimName: mysql-pvc

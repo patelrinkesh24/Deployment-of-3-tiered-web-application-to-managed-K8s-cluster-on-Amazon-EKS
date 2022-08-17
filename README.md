@@ -6,6 +6,7 @@
 •	GitHub to store your application’s code and K8s manifests
 
 •	GitHub Actions to automate build and publishing of application’s image 
+
 •	Docker cli to build the image, test it locally and as part of GitHub Actions and publish it to Amazon ECR
 
 •	Amazon ECR to securely store your Docker images

@@ -1,0 +1,1 @@
+eksctl create iamserviceaccount --name clo835 --namespace final --cluster final --attach-policy-arn arn:aws:iam::aws:policy/AmazonS3ReadOnlyAccess --approve --override-existing-s
